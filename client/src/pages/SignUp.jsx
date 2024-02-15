@@ -6,7 +6,7 @@ export default function SignUp() {
   const [formData, setFormData] = useState({});
   const [errorMessage, setErrorMessage] = useState(null);
   const [loading, setLoading] = useState(false);
-  const navigate= useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.id]: e.target.value.trim() });
@@ -31,7 +31,7 @@ export default function SignUp() {
         return setErrorMessage(data.message);
       }
       setLoading(false);
-      if(res.ok){
+      if (res.ok) {
         navigate("/sign-in");
       }
     } catch (error) {
@@ -88,13 +88,14 @@ export default function SignUp() {
               />
             </div>
             <Button gradientDuoTone="purpleToPink" type="submit">
-              {
-              loading?(
+              {loading ? (
                 <>
-                <Spinner size='sm'/>
-                <span style className="pl-3">loading...</span>
+                  <Spinner size="sm" />
+                  <span className="pl-3">Loading...</span>
                 </>
-              ):'Sign Up'}
+              ) : (
+                "Sign Up"
+              )}
             </Button>
           </form>
           <div className="flex gap-2 text-sm mt-5">
@@ -103,13 +104,11 @@ export default function SignUp() {
               Sing In
             </Link>
           </div>
-          {
-            (errorMessage != null) && (
-              <Alert className="mt-5" color='failure'>
-                {errorMessage}
-              </Alert>
-            )
-          }
+          {errorMessage != null && (
+            <Alert className="mt-5" color="failure">
+              {errorMessage}
+            </Alert>
+          )}
         </div>
       </div>
     </div>
