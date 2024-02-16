@@ -52,8 +52,7 @@ export default function SignUp() {
             Blog
           </Link>
           <p className="text-sm mt-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. At culpa
-            officiis ut ab quaerat molestiae ad earum aut officia a, aliquid
+          This is a demo project and you can sign in using your email id or google account
           </p>
         </div>
 
@@ -82,7 +81,7 @@ export default function SignUp() {
               <Label value=" Your Password" />
               <TextInput
                 type="password"
-                placeholder="Password"
+                placeholder="********"
                 id="password"
                 onChange={handleChange}
               />
