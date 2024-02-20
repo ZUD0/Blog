@@ -53,7 +53,7 @@ export default function Header() {
               }
             >
               <Dropdown.Header>
-                <span classname="block text-sm"> @{currentUser.username}</span>
+                <span classname="block text-sm"> @{currentUser.username}</span><br/><br/>
                 <span classname="block text-sm font-medium truncate"> {currentUser.email}</span>
               </Dropdown.Header>
               <Link to={'/dashboard?tab=profile'}>
