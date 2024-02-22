@@ -60,7 +60,17 @@ export const deleteUser = async (req, res, next) => {
   }
   try {
     await User.findByIdAndDelete(req.params.userId);
-    console.log("User deleted", req.params.userId)
+    console.log("User deleted", req.params.userId);
     res.status(200).json({ message: "User deleted" });
-  } catch (error) {}
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const signout = (req, res) => {
+  try {
+    res.clearCookie("access_token").status(200).json({ message: "Signout successful" });
+  } catch (error) {
+    next(error);
+  }
 };
