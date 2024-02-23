@@ -26,9 +26,8 @@ export default function App() {
           <Route path="/dashboard" element={<Dashboard />} />
         </Route>
         <Route element={<OnlyAdminPrivateRoute />}>
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/create-post" element={<CreatePost />} />
         </Route>
-        <Route path="/create-post" element={<CreatePost />} />
       </Routes>
       <Footer />
     </BrowserRouter>
