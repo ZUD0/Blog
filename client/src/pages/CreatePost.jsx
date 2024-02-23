@@ -29,7 +29,6 @@ export default function CreatePost() {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           setImageUploadProgress(progress.toFixed(0));
-          console.log(progress);
         },
         (error) => {
           setImageUploadError("Image Upload Failed");
